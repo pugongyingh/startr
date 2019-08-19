@@ -1,0 +1,266 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+
+
+}
+
+h1 {
+  font-weight:900;
+  letter-spacing: 1rem;
+
+
+}
+
+h2, h3 {
+  font-weight:400;
+}
+
+h5 {
+
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: normal;
+  color: grey;
+}
+
+p:hover {
+  color: #343a40;
+}
+
+a {
+  color: black;
+
+}
+
+
+.title {
+
+  background-image: url("images/mountain-dark.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+/* Nav bar */
+
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+
+.heading {
+  padding: 8% 20% 20% 20%;
+  color: white;
+
+}
+
+.logo {
+  height: 170px;
+  width: 170px;
+}
+
+.fas {
+  color: white;
+
+}
+
+
+
+
+/* Slogan section */
+
+.slogan-section {
+  background-color: white;
+}
+
+.slogan {
+  padding: 7% 15%;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+
+}
+
+.emphasis {
+  color: #fcdc3b;
+}
+
+
+/* Features section */
+.subject-prompt {
+  font-family: 'Work Sans', sans-serif;
+}
+
+#features {
+
+  line-height: 5rem;
+  padding: 5rem;
+  position: relative;
+
+}
+
+
+
+.feature-text {
+  font-size: 2rem;
+}
+
+/* Subjects section */
+
+.colored-section {
+  background-color: white;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+#subjects {
+  line-height: 5rem;
+  padding: 5rem;
+  position: relative;
+}
+
+.icon2 {
+  color: #fcdc3b;
+
+}
+
+#row2 {
+  display: block;
+}
+
+
+
+.footer {
+  line-height: 5rem;
+}
+
+.social {
+  font-size: 1.5rem;
+  margin: 10px 20px;
+  color: black;
+
+}
+
+.social:hover {
+  color: #fcdc3b;
+}
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+    right: 0;
+  }
+}
+
+
+/* ABOUT PAGE */
+
+.about-left {
+  width: 50%;
+  float: left;
+  padding-top: 5%;
+  padding-left: 5%;
+  text-align: right;
+}
+
+.about-right {
+  width: 50%;
+  float: right;
+  text-align: center;
+
+}
+
+.about-title {
+  text-align: right;
+  color: #fcdc3b;
+}
+
+.founder-photo {
+  position: relative;
+  top: 120px;
+}
+
+#footer-about {
+  padding-top: 600px;
+}
+
+/* JOBS PAGE */
+
+.jobs {
+  padding-left: 7%
+
+}
+
+.jobs {
+  padding-right: 7%
+}
+
+.job-description {
+  text-align: center;
+}
+
+#footer-jobs {
+  padding-top: 40px;
+}
+
+
+/* CONTACT PAGE */
+
+.contact-left {
+  width: 50%;
+  float: left;
+  padding-top: 10%;
+  text-align: right;
+}
+
+.contact-left:hover {
+  color: black;
+}
+
+.contact-heading {
+  color: #fcdc3b;
+  padding-bottom: 3%
+}
+
+.contact-social {
+  color: #fcdc3b;
+}
+
+.contact-right {
+  width: 45%;
+  float: right;
+  text-align: center;
+  margin-left: 5%;
+}
+
+#footer-contact {
+  padding-top: 500px;
+}

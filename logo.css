@@ -1,0 +1,16 @@
+body {
+  background-color: #F19F16;
+}
+
+
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: white;
+}
