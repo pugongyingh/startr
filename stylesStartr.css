@@ -8,6 +8,7 @@ body {
     text-align: center;
 
 
+
 }
 
 h1 {
@@ -40,6 +41,13 @@ a {
   color: black;
 
 }
+
+footer {
+  background-color: #407088;
+  position: relative;
+  height:70px;
+}
+
 
 
 .title {
@@ -117,6 +125,7 @@ a {
   line-height: 5rem;
   padding: 5rem;
   position: relative;
+  background-color: #799aab;
 
 }
 
@@ -186,6 +195,7 @@ a {
 .about-left {
   width: 50%;
   float: left;
+  clear: left;
   padding-top: 5%;
   padding-left: 5%;
   text-align: right;
@@ -194,6 +204,7 @@ a {
 .about-right {
   width: 50%;
   float: right;
+  clear: right;
   text-align: center;
 
 }
@@ -208,9 +219,6 @@ a {
   top: 120px;
 }
 
-#footer-about {
-  padding-top: 600px;
-}
 
 /* JOBS PAGE */
 
@@ -227,9 +235,7 @@ a {
   text-align: center;
 }
 
-#footer-jobs {
-  padding-top: 40px;
-}
+
 
 
 /* CONTACT PAGE */
@@ -259,8 +265,5 @@ a {
   float: right;
   text-align: center;
   margin-left: 5%;
-}
 
-#footer-contact {
-  padding-top: px;
 }
