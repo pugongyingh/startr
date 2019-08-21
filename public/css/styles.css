@@ -3,63 +3,48 @@ html {
 }
 
 body {
-
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-
-
-
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 h1 {
-  font-weight:900;
+  font-weight: 900;
   letter-spacing: 1rem;
-
-
 }
 
 h2, h3 {
-  font-weight:400;
+  font-weight: 400;
+  font-size: 2.5rem;
 }
 
 h5 {
-
   font-size: 2rem;
 }
 
 p {
   font-size: 1rem;
   line-height: normal;
-  color: grey;
-}
-
-p:hover {
-  color: #343a40;
 }
 
 a {
   color: black;
-
 }
 
-footer {
-  background-color: #407088;
-  position: relative;
-  height:70px;
+.footer-color {
+  background-color: #799aab;
 }
-
 
 
 .title {
-  background-image: url("images/mountain-dark.png");
+  background-image: url("../images/mountain-dark.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
+  background-color: #799aab;
 }
 
 /* Nav bar */
-
 .navbar-brand {
   font-family: "Ubuntu", sans-serif;
   font-size: 2rem;
@@ -76,11 +61,9 @@ footer {
   font-weight: 300;
 }
 
-
 .heading {
   padding: 8% 20% 20% 20%;
   color: white;
-
 }
 
 .logo {
@@ -90,14 +73,9 @@ footer {
 
 .fas {
   color: white;
-
 }
 
-
-
-
 /* Slogan section */
-
 .slogan-section {
   background-color: white;
 }
@@ -106,13 +84,11 @@ footer {
   padding: 7% 15%;
   font-weight: 400;
   letter-spacing: 0.2rem;
-
 }
 
 .emphasis {
   color: #fcdc3b;
 }
-
 
 /* Features section */
 .subject-prompt {
@@ -120,22 +96,17 @@ footer {
 }
 
 #features {
-
   line-height: 5rem;
   padding: 5rem;
   position: relative;
   background-color: #799aab;
-
 }
-
-
 
 .feature-text {
   font-size: 2rem;
 }
 
 /* Subjects section */
-
 .colored-section {
   background-color: white;
 }
@@ -152,7 +123,6 @@ footer {
 
 .icon2 {
   color: #fcdc3b;
-
 }
 
 #row2 {
@@ -161,15 +131,10 @@ footer {
 
 
 
-.footer {
-  line-height: 5rem;
-}
-
 .social {
   font-size: 1.5rem;
   margin: 10px 20px;
   color: black;
-
 }
 
 .social:hover {
@@ -188,9 +153,7 @@ footer {
   }
 }
 
-
 /* ABOUT PAGE */
-
 .about-left {
   width: 50%;
   float: left;
@@ -205,7 +168,6 @@ footer {
   float: right;
   clear: right;
   text-align: center;
-
 }
 
 .about-title {
@@ -218,12 +180,9 @@ footer {
   top: 120px;
 }
 
-
 /* JOBS PAGE */
-
 .jobs {
   padding-left: 7%
-
 }
 
 .jobs {
@@ -234,14 +193,11 @@ footer {
   text-align: center;
 }
 
-
-
-
 /* CONTACT PAGE */
-
 .contact-left {
   width: 50%;
   float: left;
+  clear: right;
   padding-top: 10%;
   text-align: right;
 }
@@ -262,7 +218,7 @@ footer {
 .contact-right {
   width: 45%;
   float: right;
+  clear: right;
   text-align: center;
   margin-left: 5%;
-
 }
