@@ -8,7 +8,7 @@ const ejs = require("ejs");
 // Set up express
 const app = express(); // Create the express application -> named 'app'
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true })); // Allows parsing of requests (POST) - based off body-parser
+app.use(express.urlencoded({ extended: true })); // Allows parsing of requests (POST)
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
 // Set up routes
