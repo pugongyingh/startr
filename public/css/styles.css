@@ -155,19 +155,21 @@ a {
 
 /* ABOUT PAGE */
 .about-left {
-  width: 50%;
-  float: left;
-  clear: left;
+  width: 42.5%;
+  display: inline-block;
   padding-top: 5%;
   padding-left: 5%;
+  padding-right: 2.5%;
   text-align: right;
 }
 
 .about-right {
-  width: 50%;
-  float: right;
-  clear: right;
+  width: 42.5%;
+  display: inline-block;
   text-align: center;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-left: 2.5%
 }
 
 .about-title {
