@@ -1,4 +1,4 @@
-// Require the .env file (this will contain secret information)
+// Require the .env file (this will contain secret information - TBC)
 require('dotenv').config();
 
 // Require packages
@@ -15,11 +15,11 @@ app.use(express.static("public")); // Serve static files from the 'public' direc
 app.get("/", function(req, res) {
     res.render("home");
 });
-  
+
 app.get("/about", function(req, res) {
     res.render("about");
 });
-  
+
 app.get("/contact", function(req, res) {
     res.render("contact");
 });
