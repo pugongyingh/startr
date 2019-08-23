@@ -61,6 +61,10 @@ a {
   font-weight: 300;
 }
 
+.nav-color {
+  background-color: #799aab;
+}
+
 .heading {
   padding: 8% 20% 20% 20%;
   color: white;
@@ -154,73 +158,79 @@ a {
 }
 
 /* ABOUT PAGE */
-.about-left {
-  width: 42.5%;
+.test {
   display: inline-block;
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 2.5%;
-  text-align: right;
-}
+  width: 45%;
+  height: 505px;
+  padding: 5px;
+  vertical-align: top;
 
-.about-right {
-  width: 42.5%;
-  display: inline-block;
-  text-align: center;
-  padding-right: 5%;
-  padding-top: 5%;
-  padding-left: 2.5%
 }
 
 .about-title {
   text-align: right;
   color: #fcdc3b;
+  margin-top: 10%;
 }
 
-.founder-photo {
-  position: relative;
-  top: 120px;
+.blurb {
+  text-align: right;
 }
+
+
+
+.founder-photo {
+  margin-top: 20%;
+}
+
+
+
 
 /* JOBS PAGE */
 .jobs {
-  padding-left: 7%
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
-.jobs {
-  padding-right: 7%
+.job-name {
+  font-weight: bold;
+  color: #ffd700;
+
 }
 
 .job-description {
   text-align: center;
+
 }
 
 /* CONTACT PAGE */
-.contact-left {
-  width: 50%;
-  float: left;
-  clear: right;
-  padding-top: 10%;
-  text-align: right;
+
+/* Page structure */
+.test {
+  display: inline-block;
+  width: 45%;
+  height: 505px;
+  padding: 5px;
+  vertical-align: top;
+
 }
 
-.contact-left:hover {
-  color: black;
+ /* Div for the contacts inside the structure */
+.contact-links {
+  text-align: right;
+  margin-top: 17%;
 }
+
+/* Styles for the content */
 
 .contact-heading {
   color: #fcdc3b;
-  padding-bottom: 3%
+  padding-bottom: 3%;
+  text-align: right;
+
 }
 
 .contact-social {
   color: #fcdc3b;
-}
-
-.contact-right {
-  width: 45%;
-  float: right;
-  clear: right;
-  text-align: center;
-  margin-left: 5%;
+  text-align: right;
 }
