@@ -247,6 +247,10 @@ a {
     line-height: normal;
   }
 
+  .title {
+    background-image: url("../images/mountain-dark-small.png");
+  }
+
   .social {
     font-size: 2.5rem;
   }
