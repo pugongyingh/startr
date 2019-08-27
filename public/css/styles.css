@@ -257,12 +257,11 @@ a {
 
 .test {
   display: block;
-  width: 80%;
+  width: 100%;
+  padding: 5%;
   height: auto;
-  padding: 5px;
   vertical-align: top;
-  margin-left: 20px;
-  margin-right: 20px;
+
 
 }
 
@@ -279,7 +278,6 @@ a {
 
 
 .founder-photo {
-  margin: 20%;
   text-align: center;
 
 }
