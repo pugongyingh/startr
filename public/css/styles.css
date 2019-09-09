@@ -30,6 +30,19 @@ a {
   color: black;
 }
 
+a:hover {
+  color: #fcdc3b;
+}
+
+.colourSection {
+  background-color: #799aab;
+  padding: 5rem;
+}
+
+.whiteSection {
+
+}
+
 .footer-custom {
   background-color: #799aab;
 }
@@ -99,9 +112,12 @@ a {
   font-family: 'Work Sans', sans-serif;
 }
 
+.middle {
+  padding: 5rem;
+}
+
 #features {
   line-height: 5rem;
-  padding: 5rem;
   position: relative;
   background-color: #799aab;
 }
@@ -109,6 +125,8 @@ a {
 .feature-text {
   font-size: 2rem;
 }
+
+/* Top podcasts */
 
 /* Subjects section */
 .colored-section {
@@ -158,13 +176,13 @@ a {
 }
 
 .about-title {
-  text-align: right;
+  text-align: center;
   color: #fcdc3b;
   margin-top: 10%;
 }
 
 .blurb {
-  text-align: right;
+  text-align: center;
 }
 
 
