@@ -88,6 +88,10 @@ a:hover {
   width: 170px;
 }
 
+.btn-width {
+  width: 150px;
+}
+
 .fas {
   color: white;
 }
