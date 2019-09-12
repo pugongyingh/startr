@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+
+<div class="signUpForm">
+
+
+  <form class="form-signin" action="/signup" method="post">
+    <img class="mb-4" src="images/startr-logo.png" alt="" width="100" height="100">
+    <h2 class="h3 mb-3 font-weight-normal">Sign up for access to loads of tips to get into your dream job!</h2>
+
+    <input type="text"  name="firstName" class="form-control formTop" placeholder="First Name" required autofocus>
+    <input type="text" name="lastName" class="form-control formMiddle" placeholder="Last Name" required autofocus>
+    <input type="email"  name="email" class="form-control formMiddle" placeholder="Email" required autofocus>
+    <!-- <input type="number" name="age" class="form-control formBottom" placeholder="Age" required autofocus> -->
+<!-- Region from where they live, do a dropdown -->
+
+
+    <button class="btn btn-lg btn-primary btn-block btn-custom" type="submit">Sign up</button>
+
+  </form>
+
+</div>
+
+
+<%- include("partials/footer") -%>
