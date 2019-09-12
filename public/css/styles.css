@@ -262,7 +262,6 @@ a:hover {
   -ms-flex-align: center;
   align-items: center;
   padding-top: 40px;
-  padding-bottom: 85px;
   background-color: #f5f5f5;
 
 }
@@ -317,7 +316,7 @@ a:hover {
 
 
 .signUpResult {
-  padding: 155px;
+  padding-top: 130px;
 }
 
 
