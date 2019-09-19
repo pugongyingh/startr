@@ -87,6 +87,7 @@ a:hover {
 .heading {
   padding: 8% 20% 20% 20%;
   color: white;
+
 }
 
 .logo {
@@ -101,6 +102,10 @@ a:hover {
 .fas {
   color: white;
 }
+
+/* #slogan-top {
+  letter-spacing: 2rem;
+} */
 
 /* Slogan section */
 .slogan-section {
@@ -176,31 +181,29 @@ a:hover {
 
 
 /* ABOUT PAGE */
-.test {
-  display: inline-block;
-  width: 45%;
-  height: 505px;
-  padding: 5px;
-  vertical-align: top;
 
-}
 
 .about-title {
   text-align: center;
   color: #fcdc3b;
-  margin-top: 10%;
+
 }
 
 .blurb {
   text-align: center;
+  padding: 1% 20% 1% 20%;
 }
 
+.profiles {
+  padding: 1% 10% 5% 10%;
 
 
-.founder-photo {
-  margin-top: 20%;
 }
 
+.profile-photo{
+  border-radius: 100%;
+  border: 4px solid #fcdc3b;
+}
 
 
 
