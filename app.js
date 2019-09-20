@@ -23,8 +23,9 @@ app.use(express.urlencoded({
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
 //Connect to MongoDB database (db is created here)
-mongoose.connect("mongodb:localhost:27017/interviewsDB", {
-  useNewUrlParser: true
+mongoose.connect("mongodb://localhost:27017/interviewsDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 //Create a new schema
@@ -38,6 +39,17 @@ const interviewSchema = {
 
 //Create a new mongoose model based on the schema
 const Interview = mongoose.model("Interview", interviewSchema);
+
+//////////TEST: Create new object////////
+// const newInterview = new Interview({
+//   video: '<iframe width="400" height="300" src="https://www.youtube.com/embed/HVJ7VaKfcqQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+//   title: "Physio: Murray Hing",
+//   blurb: "Murray Hing blurb",
+//   content:"Long form content",
+//   soundCloud:"will figure out soon",
+// });
+//
+// newInterview.save();
 
 // Set up routes
 
@@ -55,10 +67,19 @@ app.get("/contact", function(req, res) {
 
 app.get("/jobs", function(req, res) {
   //Find ALL videos (documents) in database
+  Interview.find({}, function(err, foundInterviews){
+    if(!err){
+      res.render("jobs", {
+        interviews: foundInterviews
+      });
+    } else {
+      console.log(err);
+    }
 
+  });
 
-  res.render("jobs");
 });
+
 
 app.get("/login", function(req, res) {
   res.render("login");
@@ -74,6 +95,10 @@ app.get("/success", function(req, res) {
 
 app.get("/failure", function(req, res) {
   res.render("failure");
+});
+
+app.get("/edit", function(req, res){
+  res.render("edit");
 });
 
 //Set up post request for when user inputs their details
@@ -143,6 +168,14 @@ app.post("/signup", function(req, res) {
 
 });
 
+//////////////// DB requests tageting all interviews //////////////////
+
+
+
+
+
+
+//////////////// DB requests tageting one interview //////////////////
 
 
 
