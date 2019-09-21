@@ -103,9 +103,9 @@ a:hover {
   color: white;
 }
 
-/* #slogan-top {
-  letter-spacing: 2rem;
-} */
+#slogan-top {
+  letter-spacing: 0.3rem;
+}
 
 /* Slogan section */
 .slogan-section {
@@ -322,6 +322,25 @@ a:hover {
   padding-top: 130px;
 }
 
+/* EDIT PAGE - SECRET */
+.form-CRUD {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-CRUD .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  margin: 10px;
+}
 
 
 /* @media (max-width: 1028px) {

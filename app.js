@@ -67,8 +67,8 @@ app.get("/contact", function(req, res) {
 
 app.get("/jobs", function(req, res) {
   //Find ALL videos (documents) in database
-  Interview.find({}, function(err, foundInterviews){
-    if(!err){
+  Interview.find({}, function(err, foundInterviews) {
+    if (!err) {
       res.render("jobs", {
         interviews: foundInterviews
       });
@@ -97,7 +97,7 @@ app.get("/failure", function(req, res) {
   res.render("failure");
 });
 
-app.get("/edit", function(req, res){
+app.get("/edit", function(req, res) {
   res.render("edit");
 });
 
@@ -168,16 +168,67 @@ app.post("/signup", function(req, res) {
 
 });
 
-//////////////// DB requests tageting all interviews //////////////////
+//////// Insert a new document from the edit page ///////////////////
+app.post("/edit", function(req, res) {
+  const newInterview = new Interview({
+    video: req.body.videoAdd,
+    title: req.body.titleAdd,
+    blurb: req.body.blurbAdd,
+    content: req.body.longContentAdd,
+    soundCloud: req.body.soundCloudAdd
+  });
 
+  newInterview.save(function(err) {
+    if (!err) {
+      res.redirect("/edit");
+    }
+  });
 
+  Interview.updateOne(
+    {title: req.body.currentTitle},
+    {video: req.body.videoUpdate, title: req.body.titleUpdate, blurb: req.body.blurbUpdate, soundCloud: req.body.soundCloudUpdate, content: req.body.longContentUpdate},
+    {overwrite: true},
+    function(err){
+      if(!err){
+        res.redirect("/edit");
+      }
+    }
+  );
+});
 
-
+// // Encode/decode htmlentities
+// 	function krEncodeEntities(s){
+// 		return $j("<div/>").text(s).html();
+// 	}
+// 	function krDencodeEntities(s){
+// 		return $j("<div/>").html(s).text();
+// 	}
 
 
 //////////////// DB requests tageting one interview //////////////////
 
+// app.post("/edit", function(req, res) {
+//   const documentToUpdate = Interview.findOne({
+//     title: req.body.currentTitle,
+//   });
+// });
 
+
+// app.post("/edit", function(req, res){
+//
+//   Interview.update(
+//     {title: req.body.currentTitle},
+//     {video: req.body.videoUpdate, title: req.body.titleUpdate, blurb: req.body.blurbUpdate, soundCloud: req.body.soundCloudUpdate, content: req.body.longContentUpdate},
+//     {overwrite: true},
+//     function(err){
+//       if(!err){
+//         res.redirect("/edit");
+//       }
+//     }
+//   );
+// });
+
+// app.post
 
 // Set up port
 // Run the server on port 3000, unless it is deployed (Heroku sets process.env.PORT)
