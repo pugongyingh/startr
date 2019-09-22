@@ -1,55 +1,33 @@
 <%- include("partials/header") -%>
-<h1>Edit</h1>
 
-<div class="form-group">
-  <input type="radio" name="editOption" value="Insert new interview"> Insert new interview <br>
-  <input type="radio" name="editOption" value="Update existing interview"> Update existing interview <br>
-  <input type="radio" name="editOption" value="Delete existing interview"> Delete existing interview <br>
+<div class="titleEdit">
+  <h2>Edit the startr database</h2>
 </div>
-
-<h2>Add new interview</h2>
 
 <div class="form-group">
   <form class="form-CRUD" action="/edit" method="post">
-    <textarea class="form-control" name="videoAdd" placeholder="Video Code" rows="3" cols="30"></textarea>
-    <input class="form-control" type="text" name="titleAdd" value="" placeholder="Title">
-    <input class="form-control" type="text" name="blurbAdd" value="" placeholder="Blurb">
-    <input class="form-control" type="text" name="soundCloudAdd" value="" placeholder="Sound Cloud Code">
-    <textarea class="form-control" name="longContentAdd" placeholder="Long Content" rows="5" cols="30"></textarea>
-    <div class="submit-btn">
-      <button class="btn btn-dark" type="submit" name="button">Add</button>
+
+
+    <div class="radioButtons">
+      <input type="radio" name="edit" value="insert"> Insert new interview <br>
+      <input type="radio" name="edit" value="update"> Update existing interview <br>
+      <input type="radio" name="edit" value="delete"> Delete existing interview <br>
+    </div>
+
+
+    <div class="formOptions">
+      <input class="form-control" type="text" name="currentTitle" value="" placeholder="Current Title">
+      <textarea class="form-control" name="video" placeholder="Video Code" rows="3" cols="30"></textarea>
+      <input class="form-control" type="text" name="title" value="" placeholder="Title">
+      <input class="form-control" type="text" name="blurb" value="" placeholder="Blurb">
+      <input class="form-control" type="text" name="soundCloud" value="" placeholder="Sound Cloud Code">
+      <textarea class="form-control" name="longContent" placeholder="Long Content" rows="5" cols="30"></textarea>
+      <div class="submit-btn">
+        <button class="btn btn-dark" type="submit" name="button">Submit</button>
+      </div>
     </div>
 
   </form>
 </div>
-
-<h2>Update an individual current interview</h2>
-<div class="form-group">
-  <form class="form-CRUD" action="/edit" method="post">
-    <input class="form-control" type="text" name="currentTitle" value="" placeholder="Current Title">
-    <textarea class="form-control" name="videoUpdate" placeholder="Video Code" rows="3" cols="30"></textarea>
-    <input class="form-control" type="text" name="titleUpdate" value="" placeholder="New Title">
-    <input class="form-control" type="text" name="blurbUpdate" value="" placeholder="Blurb">
-    <input class="form-control" type="text" name="soundCloudUpdate" value="" placeholder="Sound Cloud Code">
-    <textarea class="form-control" name="longContentUpdate" placeholder="Long Content" rows="5" cols="30"></textarea>
-    <div class="submit-btn">
-      <button class="btn btn-dark" type="submit" name="button">Update</button>
-    </div>
-
-  </form>
-</div>
-
-
-<h2>Delete an interview</h2>
-<div class="form-group">
-  <form class="form-CRUD" action="/edit" method="post">
-    <input class="form-control" type="text" name="titleDelete" value="" placeholder="Title">
-    <div class="submit-btn">
-      <button class="btn btn-dark" type="submit" name="button">Delete</button>
-    </div>
-
-  </form>
-</div>
-
 
 <%- include("partials/footer") -%>

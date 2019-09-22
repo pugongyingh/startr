@@ -139,7 +139,6 @@ app.post("/signup", function(req, res) {
 
   };
 
-
   //Render success or failure template
 
   request(options, function(error, response, body) {
@@ -168,33 +167,6 @@ app.post("/signup", function(req, res) {
 
 });
 
-//////// Insert a new document from the edit page ///////////////////
-app.post("/edit", function(req, res) {
-  const newInterview = new Interview({
-    video: req.body.videoAdd,
-    title: req.body.titleAdd,
-    blurb: req.body.blurbAdd,
-    content: req.body.longContentAdd,
-    soundCloud: req.body.soundCloudAdd
-  });
-
-  newInterview.save(function(err) {
-    if (!err) {
-      res.redirect("/edit");
-    }
-  });
-
-  Interview.updateOne(
-    {title: req.body.currentTitle},
-    {video: req.body.videoUpdate, title: req.body.titleUpdate, blurb: req.body.blurbUpdate, soundCloud: req.body.soundCloudUpdate, content: req.body.longContentUpdate},
-    {overwrite: true},
-    function(err){
-      if(!err){
-        res.redirect("/edit");
-      }
-    }
-  );
-});
 
 // // Encode/decode htmlentities
 // 	function krEncodeEntities(s){
@@ -205,30 +177,75 @@ app.post("/edit", function(req, res) {
 // 	}
 
 
-//////////////// DB requests tageting one interview //////////////////
+//////////////// DB requests using edit page //////////////////
 
-// app.post("/edit", function(req, res) {
-//   const documentToUpdate = Interview.findOne({
-//     title: req.body.currentTitle,
-//   });
-// });
+app.post("/edit", function(req, res) {
+
+  const methodType = req.body.edit;
+  console.log(methodType);
 
 
-// app.post("/edit", function(req, res){
-//
-//   Interview.update(
-//     {title: req.body.currentTitle},
-//     {video: req.body.videoUpdate, title: req.body.titleUpdate, blurb: req.body.blurbUpdate, soundCloud: req.body.soundCloudUpdate, content: req.body.longContentUpdate},
-//     {overwrite: true},
-//     function(err){
-//       if(!err){
-//         res.redirect("/edit");
-//       }
-//     }
-//   );
-// });
+  if (methodType === "insert") {
+    console.log("insert function will be carried out");
+    const newInterview = new Interview({
+      video: req.body.video,
+      title: req.body.title,
+      blurb: req.body.blurb,
+      content: req.body.longContent,
+      soundCloud: req.body.soundCloud
+    });
 
-// app.post
+    newInterview.save(function(err) {
+      if (!err) {
+        res.redirect("/edit");
+        console.log("Successfully created new entry in database");
+      } else {
+        console.log(err);
+      }
+    });
+  } else if (methodType === "update") {
+    Interview.updateOne({
+        title: req.body.currentTitle
+      }, {
+        video: req.body.video,
+        title: req.body.title,
+        blurb: req.body.blurb,
+        soundCloud: req.body.soundCloud,
+        content: req.body.longContent
+      },
+      function(err) {
+        if (!err) {
+          res.redirect("/edit");
+          console.log("Successfully updated database");
+        } else {
+          console.log(err);
+        }
+      });
+  } else if (methodType === "delete") {
+
+    Interview.deleteOne(
+      {title: req.body.currentTitle},
+      function(err){
+        if(!err){
+          res.redirect("/edit");
+          console.log("Successfully deleted item from database");
+        } else {
+          console.log(err);
+        }
+      }
+
+    );
+
+
+  } else {
+
+
+    //Change this to an alert!
+    console.log("Error with editing the interviews page");
+  }
+});
+
+
 
 // Set up port
 // Run the server on port 3000, unless it is deployed (Heroku sets process.env.PORT)
