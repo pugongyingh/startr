@@ -66,17 +66,17 @@ app.get("/contact", function(req, res) {
 });
 
 app.get("/jobs", function(req, res) {
-  //Find ALL videos (documents) in database
-  Interview.find({}, function(err, foundInterviews) {
-    if (!err) {
-      res.render("jobs", {
-        interviews: foundInterviews
-      });
-    } else {
-      console.log(err);
-    }
+    Interview.find({}, function(err, foundInterviews) {
+      if (!err) {
+        res.render("jobs", {
+          interviews: foundInterviews
+        });
+      } else {
+        console.log(err);
+      }
 
-  });
+    });
+
 
 });
 
@@ -169,6 +169,12 @@ app.post("/signup", function(req, res) {
 
 
 // // Encode/decode htmlentities
+const youtubeEmbedCode = '<iframe width="560" height="315" src="https://www.youtube.com/embed/vHfxfocDdBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+const encodedCode = encodeURIComponent(youtubeEmbedCode);
+const decodedCode = decodeURIComponent(encodedCode);
+
+
+
 // 	function krEncodeEntities(s){
 // 		return $j("<div/>").text(s).html();
 // 	}
@@ -186,7 +192,6 @@ app.post("/edit", function(req, res) {
 
 
   if (methodType === "insert") {
-    console.log("insert function will be carried out");
     const newInterview = new Interview({
       video: req.body.video,
       title: req.body.title,
@@ -203,6 +208,7 @@ app.post("/edit", function(req, res) {
         console.log(err);
       }
     });
+
   } else if (methodType === "update") {
     Interview.updateOne({
         title: req.body.currentTitle
