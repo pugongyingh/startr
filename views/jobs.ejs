@@ -2,7 +2,7 @@
 
 <!-- Jobs Section -->
 
-<section class="colored-section" id="subjects">
+<section class="default-primary-color" id="subjects">
 
   <h3 class="subject-prompt">Start here: What are you interested in?</h3>
 
@@ -11,7 +11,7 @@
     <!-- First line -->
 
     <div class="row">
-      
+
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-globe-americas icon2 fa-4x"></i>
         <h3 class="feature-text">Geography</h3>
@@ -63,7 +63,7 @@
 </section>
 
 <section>
-  <div class="row">
+  <div class="row jobs">
 
 
     <% interviews.forEach(function(interview){ %>
@@ -76,6 +76,7 @@
       <p><%=interview.blurb%></p>
       <br>
       <p><%-interview.soundCloud%></p>
+      <a href="/interviews/<%=interview._id%>">Read More</a>
 
     </div>
 
