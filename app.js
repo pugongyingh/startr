@@ -123,29 +123,24 @@ app.get("/jobs", function(req, res) {
 });
 
 //Route to display single interview
-app.get("/interviews/:interviewID", function(req, res) {//not finding the ID
-  const requestedInterviewID = req.params.interviewId;
-  console.log(requestedInterviewID);
-  Interview.findOne({ //this is not finding the interview
+app.get("/interviews/:interviewID", function(req, res) {
+  const requestedInterviewID = req.params.interviewID;
+
+  Interview.findOne({
     _id: requestedInterviewID
   }, function(err, interview) {
 
     if (err) {
       console.log(err);
     } else {
-      console.log(interview);
-      res.render("singleInterview");
-    //   , {
-    //   //   video: interview.video,
-    //   //   title: interview.title,
-    //   //   content: interview.content,
-    //   //   soundCloud: interview.soundCloud
-    //   // });
-    //
-    // }
-
-  }
-});
+      res.render("oneInterview", {
+        video: interview.video,
+        title: interview.title,
+        content: interview.content,
+        soundCloud: interview.soundCloud
+      });
+    }
+  });
 });
 
 app.get("/login", function(req, res) {
