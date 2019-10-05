@@ -68,6 +68,8 @@ const interviewSchema = {
 //Create a new mongoose model based on the schema
 const Interview = mongoose.model("Interview", interviewSchema);
 
+///////////////////////BLOG POSTS COLLECTION//////////////////////////
+
 ///////////////////////USER LOGINS COLLECTION//////////////////////////
 //Create a new schema
 const userSchema = new mongoose.Schema({
@@ -171,6 +173,13 @@ app.get("/dashboard", function(req, res) {
     res.redirect("/login");
   }
 
+});
+
+//Set up post request for home page to generate random video
+app.post("/", function(req, res){
+  // Find the number of videos in database
+  // Math.random up to this value
+  // Find the video in the database which matches this number
 });
 
 //Set up post request for when user inputs their details
