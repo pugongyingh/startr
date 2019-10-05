@@ -11,8 +11,9 @@ body {
 }
 
 h1 {
-font-family: 'Lusitana', serif;
-  font-weight: 700;
+font-family: utopia, serif;
+/* 'Lusitana', serif; */
+  font-weight: 900;
   letter-spacing: 1rem;
 }
 
