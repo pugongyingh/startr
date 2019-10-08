@@ -101,7 +101,18 @@ passport.deserializeUser(User.deserializeUser());
 
 ///////////////////////SET UP ROUTES//////////////////////////
 app.get("/", function(req, res) {
-  res.render("home");
+  Interview.countDocuments({}, function(err, count){
+    console.log(count);
+    const totalDocuments = count;
+    const randomNumber = Math.random;
+    const indexOfRandomVideo = Math.floor(randomNumber * totalDocuments);
+
+    Interview.findOne().skip(indexOfRandomVideo).exec(
+    function (err, result) {
+      console.log(result); //this is working
+  });
+  });
+  res.render("home", {video: result.video}); //can't find result
 });
 
 app.get("/about", function(req, res) {
@@ -178,6 +189,7 @@ app.get("/dashboard", function(req, res) {
 //Set up post request for home page to generate random video
 app.post("/", function(req, res){
   // Find the number of videos in database
+
   // Math.random up to this value
   // Find the video in the database which matches this number
 });
