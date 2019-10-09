@@ -112,7 +112,9 @@ app.get("/", function(req, res) {
       console.log(result); //this is working
   });
   });
-  res.render("home", {video: result.video}); //can't find result
+  res.render("home"
+  // , {video: result.video}
+); //can't find result
 });
 
 app.get("/about", function(req, res) {
