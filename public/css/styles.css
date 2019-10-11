@@ -3,15 +3,17 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  /* 'Questrial', sans-serif; */
   text-align: center;
   overflow-x: hidden;
 }
 
 h1 {
-font-family: utopia, serif;
+font-family: 'Judson', serif;
+/* utopia, serif; */
   font-weight: 900;
-  letter-spacing: 1rem;
+  letter-spacing: 0.5rem;
 }
 
 h2, h3 {
@@ -62,6 +64,12 @@ hr {
 
 
 /* Have all divs with same padding */
+
+#header-text {
+  letter-spacing: 1rem;
+  font-size: 4rem;
+}
+
 .padding {
   padding: 5rem;
 }
