@@ -4,7 +4,7 @@
 
 <section class="default-primary-color" id="subjects">
 
-  <h3 class="subject-prompt">Start here: What are you interested in?</h3>
+  <h3 class="subject-prompt">What are you interested in?</h3>
 
   <div class="container-fluid">
 
@@ -14,22 +14,22 @@
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-globe-americas icon2 fa-4x"></i>
-        <h3 class="feature-text">Geography</h3>
+        <h3 class="feature-text">Entrepreneurship</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-book icon2 fa-4x"></i>
-        <h3 class="feature-text">English</h3>
+        <h3 class="feature-text">Art</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-laptop-code icon2 fa-4x"></i>
-        <h3 class="feature-text">Digital Science</h3>
+        <h3 class="feature-text">Sports</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-plane icon2 fa-4x"></i>
-        <h3 class="feature-text">Tourism</h3>
+        <h3 class="feature-text">Travel</h3>
       </div>
 
     </div>
@@ -40,34 +40,33 @@
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-dollar-sign icon2 fa-4x"></i>
-        <h3 class="feature-text">Economics</h3>
+        <h3 class="feature-text">Technology</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-square-root-alt icon2 fa-4x"></i>
-        <h3 class="feature-text">Maths</h3>
+        <h3 class="feature-text">Science</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-volleyball-ball icon2 fa-4x"></i>
-        <h3 class="feature-text">PE</h3>
+        <h3 class="feature-text">People</h3>
       </div>
 
       <div class="feature-box col-sm-6 col-lg-3">
         <i class="fas fa-music icon2 fa-4x"></i>
-        <h3 class="feature-text">Music</h3>
+        <h3 class="feature-text">Nature</h3>
       </div>
 
     </div>
+
+    <!-- more categories to add -->
   </div>
 </section>
 
-<section>
-  <div class="row jobs">
-
-
+<section class="padding">
+  <div class="row">
     <% interviews.forEach(function(interview){ %>
-
     <div class="feature-box col-lg-6 job-description">
       <div class="video">
         <%-interview.video%>
@@ -76,14 +75,10 @@
       <p><%=interview.blurb%></p>
       <br>
       <p><%-interview.soundCloud%></p>
-      <a href="/interviews/<%=interview._id%>">Read More</a>
-
+      <a class="btn btn-outline-dark" href="/interviews/<%=interview._id%>">Read More</a>
     </div>
-
     <% }) %>
-
   </div>
-
 </section>
 
 <%- include("partials/footer") -%>

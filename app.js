@@ -1,9 +1,6 @@
 //jshint esversion:6
-
-// Require the .env file (this will contain secret information - TBC)
 require('dotenv').config();
 
-// Require packages
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
@@ -12,20 +9,32 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+// const serverless = require("serverless-http"); --> for Netlify
+
+//////FUTURE --> for authentication///////////
 // const GoogleStrategy = require('passport-google-oauth20').Strategy; //used as a passport strategy
 // const findOrCreate = require("mongoose-findorcreate");
 // const FacebookStrategy = require("passport-facebook").Strategy;
 
 // Set up express
-const app = express(); // Create the express application -> named 'app'
-// app.set('view engine', 'ejs');
+const app = express();
 
 
+////////////NETLIFY SET UP(?)////////////
 
-// app.use(express.urlencoded({
-//   extended: true
-// })); // Allows parsing of requests (POST)
-// app.use(express.static("public")); // Serve static files from the 'public' directory
+// const router = express.Router();
+// router.get("/", (req, res) => { --> do all the routes need to be changed to this format?
+// });
+//
+// app.use("/.netlify/functions/api", router);
+//
+// module.exports.handler = serverless(app);
+
+
+///To put in package.json:
+// "start": "./node_modules/.bin/netlify-lambda serve src",
+// "build": "./node_modules/.bin/netlify-lamda build src"
+
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -34,9 +43,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
+//Authentication
 app.use(session({
-  secret: process.env.PASSPORT_SECRET, //transfer to .env file
+  secret: process.env.PASSPORT_SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -85,6 +94,8 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
+
+//////Start auth session: to do later///////////
 // use static serialize and deserialize of model for passport session support
 // passport.serializeUser(function(user, done) {
 //   done(null, user.id);
@@ -101,40 +112,33 @@ passport.deserializeUser(User.deserializeUser());
 
 ///////////////////////SET UP ROUTES//////////////////////////
 app.get("/", function(req, res) {
-  Interview.countDocuments({}, function(err, count){
-    console.log("Total number of videos = " + count);
-    const totalDocuments = count;
-    const randomNumber = Math.random();
-    const indexOfRandomVideo = Math.floor(randomNumber * totalDocuments);
-
+  //put random video function into one piece of code
+  Interview.countDocuments({}, function(err, count) {
+    const indexOfRandomVideo = Math.floor(Math.random() * count);
 
     Interview.findOne().skip(indexOfRandomVideo).exec(
-    function (err, result) {
-      const randomVideo = result.video;
-      console.log(randomVideo); //this is working
+      function(err, result) {
+        const randomVideo = result.video;
 
-      res.render("home", {video: randomVideo}
-    );
-  });
+        res.render("home", {
+          video: randomVideo
+        });
+      });
   });
 });
 
-app.get("/#randomVideoGenerator", function(req, res){
-  Interview.countDocuments({}, function(err, count){
-    console.log("Total videos = "+ count);
-    const totalDocuments = count;
-    const randomNumber = Math.random();
-    const indexOfRandomVideo = Math.floor(randomNumber * totalDocuments);
-    console.log("Randome number = " + indexOfRandomVideo);
+app.get("/#randomVideoGenerator", function(req, res) {
+  Interview.countDocuments({}, function(err, count) {
+    const indexOfRandomVideo = Math.floor(Math.random() * count);
 
     Interview.findOne().skip(indexOfRandomVideo).exec(
-    function (err, result) {
-      const randomVideo = result.video;
-      console.log(randomVideo); //this is working
+      function(err, result) {
+        const randomVideo = result.video;
 
-      res.render("home", {video: randomVideo}
-    );
-  });
+        res.render("home", {
+          video: randomVideo
+        });
+      });
   });
 });
 
@@ -210,7 +214,7 @@ app.get("/dashboard", function(req, res) {
 });
 
 //Set up post request for home page to generate random video
-app.post("/", function(req, res){
+app.post("/", function(req, res) {
   res.redirect("/#randomVideoGenerator");
 });
 
@@ -228,9 +232,6 @@ app.post("/signup", function(req, res) {
 
   //////////Send user information to mailchimp//////////////
 
-  // Put values into one variable called userInformation
-  console.log(firstName, lastName, email);
-
   var userInformation = {
     members: [{
       email_address: email,
@@ -239,7 +240,7 @@ app.post("/signup", function(req, res) {
         FNAME: firstName,
         LNAME: lastName
       }
-      //age and region
+      //also age and region
     }]
   };
 
@@ -250,13 +251,13 @@ app.post("/signup", function(req, res) {
     url: "https://us4.api.mailchimp.com/3.0/lists/8776ede861",
     method: "POST",
     headers: {
-      "Authorization": "aefreeman mailChimpAPIKey" //--> remember to change end to the server allocated
+      "Authorization": "aefreeman mailChimpAPIKey"
     },
     body: jsonData
 
   };
 
-  // Render success or failure template
+  // Render success or failure template --> use these or routes below
 
   // request(options, function(error, response, body) {
   //
@@ -295,7 +296,6 @@ app.post("/signup", function(req, res) {
   });
 
   //Return to sign up page from failure page when button clicked using a post request
-
   app.post("/failure", function(req, res) {
     res.redirect("/signup");
   });
@@ -392,10 +392,9 @@ app.post("/edit", function(req, res) {
 
 
 
-// Set up port
+// Set up port --> not sure if this is different for Netlify?
 // Run the server on port 3000, unless it is deployed (Heroku sets process.env.PORT)
 const port = process.env.PORT || 3000;
-// Server will listen on the specified port and will log a message when this occurs
 app.listen(port, function() {
   console.log("Port is running on " + port);
 });
