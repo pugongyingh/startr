@@ -54,7 +54,6 @@ $node_modules.tar.gz
 
 # -------------------------------------------------
 # Users Environment
-# package-lock temporarily added until all envs synced
 # -------------------------------------------------
 .lock-wscript
 .idea
@@ -68,7 +67,6 @@ local.py
 *.sublime-project
 *.sublime-workspace
 .vscode
-package-lock.json
 
 # -------------------------------------------------
 # Your own project's ignores
