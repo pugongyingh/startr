@@ -1,0 +1,60 @@
+<%- include("partials/header") -%>
+
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+
+  <div class="border-right nav-fixed-left side-nav-custom" id="sidebar-wrapper">
+    <div class="list-group list-group-flush list-position">
+      <a href="#video" class="list-group-item list-group-item-action custom-sidebar border-0">Watch interview</a>
+      <a href="#research" class="list-group-item list-group-item-action custom-sidebar border-0">Research</a>
+      <a href="#cmd" class="list-group-item list-group-item-action custom-sidebar border-0">Still unsure?</a>
+      <a href="#highSchool" class="list-group-item list-group-item-action custom-sidebar border-0">High school</a>
+      <a href="#afterHS" class="list-group-item list-group-item-action custom-sidebar border-0">After high school</a>
+      <a href="#networking" class="list-group-item list-group-item-action custom-sidebar border-0">Networking</a>
+      <a href="#getJob" class="list-group-item list-group-item-action custom-sidebar border-0">Get the job</a>
+    </div>
+  </div>
+
+
+
+  <div id="page-content-wrapper">
+    <div class="single-interview-content-position">
+      <div class="padding" id="video">
+        <h1><%=title%></h1>
+        <%-video%>
+        <p><%=content%></p>
+        <%-soundCloud%>
+      </div>
+
+      <div class="padding" id="research">
+        <h1>Research</h1>
+      </div>
+
+      <div class="padding" id="cmd">
+        <h1>Common myths debunked</h1>
+      </div>
+
+      <div class="padding" id="highSchool">
+        <h1>What to do at high school</h1>
+      </div>
+
+      <div class="padding" id="afterHS">
+        <h1>What to do after high school</h1>
+      </div>
+
+      <div class="padding" id="networking">
+        <h1>How to network</h1>
+      </div>
+
+      <div class="padding" id="getJob">
+        <h1>Get the job</h1>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<%- include("partials/footer") -%>

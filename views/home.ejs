@@ -1,172 +1,109 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<%- include("partials/header") -%>
 
-<head>
-  <meta charset="utf-8">
-  <!-- General Meta tags -->
-  <meta name="description" content="Startr helps you create your future. Get a snapshot of your dream job, learn valuable networking skills and discover a range of career opportunities. Sign up to make it a reality!">
-  <meta name="keywords" content="podcast, video, career, jobs, students, advice">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Social media meta tags -->
-  <meta property="og:url" content="http://www.startr.co.nz" />
-  <meta property="og:type" content="article">
-  <meta property="og:title" name="twitter:title" content="Start your future" />
-  <meta property="og:image" name="twitter:image" content="../../public/images/mountain-dark.png" />
-  <meta property="og:description" name="twitter:description" content="Hear from all sorts of people in all sorts of jobs and learn how to get where you want to be!">
+<section class="title">
+  <div class="heading">
+    <img class="logo" src="images/triangle-logo.png" alt="logo">
 
-  <meta property="twitter:description" name="twitter:description" content="Hear from all sorts of people in all sorts of jobs and learn how to get where you want to be!" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:dnt" content="on">
-  <meta name="twitter:creator" content="@startr_future">
+    <h1 id="header-text">START YOUR FUTURE</h1>
+    <p id="slogan-top">Explore our podcasts and videos to discover your dream job and how to make it a reality.</p>
+    <a href="/signup"><button type="button" class="btn btn-outline-light btn-lg download-btn btn-width">Sign Up</button></a>
+    <a href="/jobs"> <button type="button" class="btn btn-outline-light btn-lg download-btn btn-width">Videos</button></a>
+    <br>
+    <br>
+    <a href="#sloganID"> <i class="fas fa-chevron-down"></i></a>
+  </div>
 
-  <title>startr</title>
+</section>
 
-  <link rel="icon" href="images/favicon.ico">
+<section class="">
+  <!-- Make this a 'what to do on our website section'? -->
+  <div class="slogan" id="sloganID">
+    <h2 class="primary-text-color">startr can help you <span class="emphasis">create your future</span></h2> <br><br>
+    <h5>We want to make it easier for young people to find their dream job.</h5>
+    <br>
+    <h5>We're your fun, friendly career mentor.</h5>
+    <br>
+    <h5 class="primary-text-color"><a href="/signup">Sign up</a> to make it a reality!</h5>
+  </div>
+</section>
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+<hr>
 
-  <!-- Bootstrap javascript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Top interviews carousel -->
+<section class="padding" id="featuredInterviews">
+  <div>
+    <div id="interview-carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active container-fluid">
+          <iframe width="600" height="340" src="https://www.youtube.com/embed/AhIZr4wwMvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h1>Explore</h1>
+          <p>Hear about a wide range of jobs.</p>
+        </div>
+        <div class="carousel-item container-fluid">
+          <iframe width="600" height="340" src="https://www.youtube.com/embed/P353ajIYZwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h1>Action</h1>
+          <p>Learn how to make things happen.</p>
+        </div>
+        <div class="carousel-item container-fluid">
+          <iframe width="600" height="340" src="https://www.youtube.com/embed/HVJ7VaKfcqQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h1>Fun</h1>
+          <p>Find out how you can enjoy the process.</p>
+        </div>
+      </div>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,900|Ubuntu:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-</head>
-
-<body>
-
-
-  <section class="title">
-
-
-
-    <!-- Nav Bar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-transparent">
-
-
-      <a class="navbar-brand" href="/">
-        <img src="images/brand.png" width="160" height="50" alt="">
+      <a class="carousel-control-prev" href="#interview-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/jobs">Interviews</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link border rounded" href="/signup">Sign Up</a>
-          </li>
-      </div>
-
-    </nav>
-
-
-    <div class="heading">
-      <img class="logo" src="images/triangle-logo.png" alt="logo">
-
-      <h1>START YOUR FUTURE</h1>
-      <p id="slogan-top">Explore our podcasts and videos to discover your dream job and how to make it a reality.</p>
-      <a href="/signup"><button type="button" class="btn btn-outline-light btn-lg download-btn btn-width">Sign Up</button></a>
-      <button type="button" class="btn btn-outline-light btn-lg download-btn btn-width">Support Us</button>
-      <br>
-      <br>
-      <a href="#sloganID"> <i class="fas fa-chevron-down"></i></a>
+      <a class="carousel-control-next" href="#interview-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
-  </section>
+</section>
 
-  <section class="slogan-section">
+<hr>
 
-    <div class="slogan" id="sloganID">
-      <h2>startr can help you <span class="emphasis">create your future</span></h2> <br><br>
-      <h5>Explore our podcasts and videos to discover your dream job.</h5>
-      <br>
-      <h5><a href="#">Sign up</a> to make it a reality!</h5>
-    </div>
+<!-- BLOG -> to come -->
+<section class="padding" id="blog">
+  <div>
+    <h1>Blog</h1>
+    <!-- Show three blog items  -->
+  </div>
+</section>
 
-  </section>
+<hr>
 
-  <section class="middle" id="features">
-    <h2>Our top interviews</h2>
-    <div class="row">
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/OGpVOSPqboc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Explore</h3>
-        <p>Hear about a wide range of jobs.</p>
-      </div>
+<!-- COMMON MYTHS DEBUNKED -->
+<section class="padding">
+  <h1>Common job myths... debunked!</h1>
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/ccBRGb7rAIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
 
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/ccBRGb7rAIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Action</h3>
-        <p>Learn how to make things happen.</p>
-      </div>
+<hr>
 
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/tD9P5c2an2I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Fun</h3>
-        <p>Find out how you can enjoy the process.</p>
-      </div>
+<!-- RANDOM VIDEO GENERATOR -> need to double check if working properly-->
+<section id=randomVideoGenerator>
+  <div>
+    <h1>Random Video Generator</h1>
+    <form class="" action="/" method="post">
+      <button class="btn btn-outline-dark btn-lg download-btn" type="submit" name="button">Random video</button>
+    </form>
+  </div>
+  <div class="randomVideoPadding">
+    <%- video %>
+  </div>
+</section>
 
-    </div>
-  </section>
+<hr>
 
-  <section class="middle" id="top-podcasts">
-    <h2>Our top podcasts</h2>
-    <div class="row">
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/OGpVOSPqboc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Explore</h3>
-        <p>Hear about a wide range of jobs.</p>
-      </div>
-
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/ccBRGb7rAIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Action</h3>
-        <p>Learn how to make things happen.</p>
-      </div>
-
-      <div class="feature-box col-lg-4">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/tD9P5c2an2I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h3 class="feature-text">Fun</h3>
-        <p>Find out how you can enjoy the process.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="colourSection">
-
-    <h2>Common job myths... debunked!</h2>
-    <iframe width="700" height="500" src="https://www.youtube.com/embed/ccBRGb7rAIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  </section>
-
-  <section class="whiteSection">
-    <h2>Our Sponsors</h2>
-    <h2>Keen to work with us?</h2>
-  </section>
+<!-- SPONSORSHIP -->
+<section class="padding">
+  <h1>Our Sponsors</h1>
+  <h2>Keen to work with us?</h2>
+</section>
 
 
 
-  <%- include("partials/footer") -%>
+<%- include("partials/footer") -%>
