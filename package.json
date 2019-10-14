@@ -5,9 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-    
-
+    "start": "node server.js",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -33,5 +32,9 @@
     "passport-local-mongoose": "^5.0.1",
     "request": "^2.88.0",
     "serverless-http": "^2.3.0"
+  },
+  "deveDependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }
