@@ -11,6 +11,15 @@
 ehthumbs.db
 Thumbs.db
 
+# -------------------------------------------------
+# Logs and databases
+# -------------------------------------------------
+logs
+*.log
+npm-debug.log*
+*.sql
+*.sqlite3
+
 node_modules
 .env
 functions
