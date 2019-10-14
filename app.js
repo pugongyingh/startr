@@ -120,9 +120,11 @@ app.get("/", function(req, res) {
       function(err, result) {
         const randomVideo = result.video;
 
-        res.render("home", {
-          video: randomVideo
-        });
+        res.render("home"
+        // , {
+        //   video: randomVideo
+        // }
+      );
       });
   });
 });
@@ -135,9 +137,11 @@ app.get("/#randomVideoGenerator", function(req, res) {
       function(err, result) {
         const randomVideo = result.video;
 
-        res.render("home", {
-          video: randomVideo
-        });
+        res.render("home"
+        // , {
+        //   video: randomVideo
+        // }
+      );
       });
   });
 });
