@@ -70,5 +70,8 @@ local.py
 .vscode
 package-lock.json
 
-# Local Netlify folder
+# -------------------------------------------------
+# Your own project's ignores
+# -------------------------------------------------
+functions
 .netlify
