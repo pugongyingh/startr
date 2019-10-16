@@ -1,3 +1,4 @@
+// jshint esversion: 6
 const fs = require("fs");
 const path = require("path");
 const ejs = require("ejs");
@@ -26,5 +27,10 @@ function ejs2html({ path, outPath, data, options }) {
 
 ejs2html({
   path: `${__dirname}/views/home.ejs`,
-  outPath: `${__dirname}/public/index.html`
+  outPath: `${__dirname}/public/index.html`,
+});
+
+ejs2html({
+  path: `${__dirname}/views/about.ejs`,
+  outPath: `${__dirname}/public/about.html`,
 });
