@@ -13,9 +13,7 @@ The npm modules that need to be installed to run the app:
 * body-parser
 * request
 * mongoose
-* express-session
-* passport
-* passport-local-mongoose
+
 
 
 
