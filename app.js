@@ -394,7 +394,7 @@ app.post("/edit", function(req, res) {
 
 // Set up port --> not sure if this is different for Netlify?
 // Run the server on port 3000, unless it is deployed (Heroku sets process.env.PORT)
-const port = process.env.PORT || 3000;
+const port = 80;
 app.listen(port, function() {
   console.log("Port is running on " + port);
 });
